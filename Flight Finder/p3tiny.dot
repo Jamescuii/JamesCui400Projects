@@ -1,0 +1,20 @@
+digraph { 
+  AMW [label="AMW,Ames - IA,0,0"];
+  EUG [label="EUG,Eugene - OR,44.1246,-123.212"];
+  LMT [label="LMT,Klamath Falls - OR,42.1561,-121.733"];
+  MHK [label="MHK,Manhattan - KS,39.141,-96.6708"];
+  PDX [label="PDX,Portland - OR,45.5887,-122.598"];
+  RDD [label="RDD,Redding - CA,40.509,-122.293"];
+  RDM [label="RDM,Bend - OR,44.2541,-121.15"];
+  SEA [label="SEA,Seattle - WA,47.449,-122.309"];
+  SFO [label="SFO,San Francisco - CA,37.619,-122.375"];
+  YKM [label="YKM,Yakima - WA,46.5682,-120.544"];
+  EUG -> RDM [len=103];
+  LMT -> RDM [len=147];
+  MHK -> AMW [len=254];
+  PDX -> RDM [len=116];
+  RDD -> RDM [len=265];
+  SEA -> RDM [len=228];
+  SFO -> RDM [len=462];
+  YKM -> RDM [len=162];
+}

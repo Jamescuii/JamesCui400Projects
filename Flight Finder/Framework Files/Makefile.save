@@ -1,0 +1,40 @@
+runTests: runDataWranglerTests runAlgorithmEngineerTests runBackendDeveloperTests runFrontendDeveloperTests
+
+run: 
+	javac runFlightFinder.java
+	java runFlightFinder
+
+runTests: FrontendDeveloperTests.class
+        java --module-path ./lib/ --add-modules javafx.controls --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED -jar junit5.jar -cp .:JavaFXTester.jar -c FrontendDeveloperTests
+
+FrontendDeveloperTests.class: FrontendDeveloperTests.java FrontendDeveloper.class BackendDeveloperFD.class
+	javac --module-path ./lib/ --add-modules javafx.controls -cp .:junit5.jar:JavaFXTester.jar FrontendDeveloperTests.java
+
+runProgram: FrontendDeveloper.class BackendDeveloperFD.class
+	java --module-path ./lib/ --add-modules javafx.controls FrontendDeveloper FrontendInterface
+
+FrontendDeveloper.class: FrontendDeveloper.java FrontendInterface.java
+	javac --module-path ./lib/ --add-modules javafx.controls FrontendDeveloper.java FrontendInterface.java
+
+BackendDeveloperFD.class:
+	javac BackendDeveloperFD.java
+
+runDataWranglerTests: DataWranglerTests.class
+	java -jar junit5.jar -cp . -c DataWranglerTests
+
+DataWranglerTests.class: DataWranglerTests.java
+	javac -cp .:junit5.jar DataWranglerTests.java
+runAlgorithmEngineerTests: AlgorithmEngineerTests.class
+	java -jar junit5.jar -cp . --select-class=AlgorithmEngineerTests
+
+AlgorithmEngineerTests.class: AlgorithmEngineerTests.java
+	javac -cp .:junit5.jar AlgorithmEngineerTests.java
+	
+runBackendDeveloperTests: BackendDeveloperTests.class
+	java -jar junit5.jar -cp . --select-class=BackendDeveloperTests
+
+BackendDeveloperTests.class: BackendDeveloperTests.java
+	javac -cp .:junit5.jar BackendDeveloperTests.java
+
+clean:
+	rm *.class
