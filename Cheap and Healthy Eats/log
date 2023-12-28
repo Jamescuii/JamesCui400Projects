@@ -1,0 +1,75 @@
+Script started on 2023-02-16 05:41:51+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="111" LINES="39"]
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ git status
+[?2004lOn branch BackendDeveloper
+Your branch is up to date with 'origin/BackendDeveloper'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31mBackendDeveloperTests.java[m
+	[31mCHSearchBackend.java[m
+	[31mCHSearchBackendInterface.java[m
+	[31mCHSearchFrontendInterface.java[m
+	[31mHashtableWithDuplicateKeysBD.java[m
+	[31mHashtableWithDuplicateKeysInterface.java[m
+	[31mPostBD.java[m
+	[31mPostInterface.java[m
+	[31mPostReaderBD.java[m
+	[31mPostReaderInterface.java[m
+	[31mlog[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ git log-1[K[K -1
+[?2004l[?1h=[33mcommit d9cfafdb772f20655a32fa8673fcc53c44dd31f6[m[33m ([m[1;36mHEAD -> [m[1;32mBackendDeveloper[m[33m, [m[1;31morigin/FrontendDeveloper[m[33m, [m[1;31morigin/Dat[m [33m[m[33m[m[1;36m[m[1;32m[m[33m[m[1;31m[m[33m[m[1;31maWrangler[m[33m, [m[1;31morigin/BackendDeveloper[m[33m, [m[1;31morigin/AlgorithmEngineer[m[33m)[m[m
+Author: Gary Dahl <dahl@cs.wisc.edu>[m
+Date:   Mon Feb 6 10:26:04 2023 -0600[m
+[m
+    Added role.txt (without role) to project[m
+[K[?1l>[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ rm -f *.class
+[?2004l[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ ls
+[?2004lBackendDeveloperTests.java      HashtableWithDuplicateKeysBD.java         PostReaderBD.java
+CHSearchBackend.java            HashtableWithDuplicateKeysInterface.java  PostReaderInterface.java
+CHSearchBackendInterface.java   PostBD.java                               log
+CHSearchFrontendInterface.java  PostInterface.java                        role.txt
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ javac *.java
+[?2004lHashtableWithDuplicateKeysInterface.java:10: error: cannot find symbol
+public interface HashtableWithDuplicateKeysInterface<KeyType, ValueType> extends MapADT<KeyType,List<ValueType>> {
+                                                                                 ^
+  symbol: class MapADT
+HashtableWithDuplicateKeysBD.java:29: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:35: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:41: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:48: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:54: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:61: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+HashtableWithDuplicateKeysBD.java:67: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+Note: HashtableWithDuplicateKeysBD.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+8 errors
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ nano Mad[KpADT.java
+[?2004l[?2004h[?1049h[22;0;0t[1;39r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[37;50H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 6.2                                      MapADT.java                                                [1;110H(B[m[38d(B[0;7m^G(B[m Help[38;16H(B[0;7m^O(B[m Write Out   (B[0;7m^W(B[m Where Is    (B[0;7m^K(B[m Cut[38;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[39d(B[0;7m^X(B[m Exit[39;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[2d[?12l[?25h[?25l[1;65H(B[0;7m*[37d(B[m[K[1;110H[2d[36mimport[39m(B[m java.util.NoSuchElementException;[4d(B[0;1m[34m/**[5d * This abstract data type represents a collection that maps keys to values,[6d * in which duplicate keys are not allowed (each key maps to exactly one value).[7d */[8d(B[0m[36mpublic[39m(B[m [36minterface[39m(B[m MapADT<KeyType,ValueType> {[10;5H[34m// add a new key-value pair/mapping to this collection[11;5H// throws exception when key is null or duplicate of one already stored[12;5H[36mpublic[39m(B[m [32mvoid[39m(B[m put(KeyType key, ValueType value) [36mthrows[39m(B[m IllegalArgumentException;[14;5H[34m// check whether a key maps to a value within this collection[15;5H[36mpublic[39m(B[m [32mboolean[39m(B[m containsKey(KeyType key);[17;5H[34m// retrieve the specific value that a key maps to[18;5H// throws exception when key is not stored in this collection[19;5H[36mpublic[39m(B[m ValueType get(KeyType key) [36mthrows[39m(B[m NoSuchElementException;[21;5H[34m// remove the mapping for a given key from this collection[22;5H// throws exception when key is not stored in this collection[23;5H[36mpublic[39m(B[m ValueType remove(KeyType key) [36mthrows[39m(B[m NoSuchElementException;[25;5H[34m// remove all key-value pairs from this collection[26;5H[36mpublic[39m(B[m [32mvoid[39m(B[m clear();[27d[42m    [28d[49m[34m// retrieve the number of keys stored within this collection[29;5H[36mpublic[39m(B[m [32mint[39m(B[m getSize();[31;5H[34m// retrieve this collection's capacity (size of its underlying array)[32;5H[36mpublic[39m(B[m [32mint[39m(B[m getCapacity();[34d}[?12l[?25h[?25l[37d(B[0;7mSave modified buffer?                                                                                          [38;1H Y(B[m Yes[K[39d(B[0;7m N(B[m No  [39;16H (B[0;7m^C(B[m Cancel[K[37;23H[?12l[?25h[?25l[38d(B[0;7m^G(B[m Help[38;28H(B[0;7mM-D(B[m DOS Format[38;55H(B[0;7mM-A(B[m Append[38;82H(B[0;7mM-B(B[m Backup File[39d(B[0;7m^C(B[m Cancel[17G           (B[0;7mM-M(B[m Mac Format[39;55H(B[0;7mM-P(B[m Prepend[39;82H(B[0;7m^T(B[m Browse[37d(B[0;7mFile Name to Write: MapADT.java(B[m[?12l[?25h[?25l[37;48H[1K (B[0;7m[ Writing... ](B[m[K[1;65H(B[0;7m [110G(B[m[37;47H(B[0;7m[ Wrote 33 lines ](B[m[J[39d[?12l[?25h[39;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ javac *.java
+[?2004lNote: HashtableWithDuplicateKeysBD.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ java Backed[KndDeveloperTests
+[?2004ltest1: true
+test2: true
+test3: true
+test4: true
+test5: true
+[?2004h]0;realjamescui@instance-2: ~/Project1_jcui[01;32mrealjamescui@instance-2[00m:[01;34m~/Project1_jcui[00m$ exit
+[?2004lexit
+
+Script done on 2023-02-16 05:44:27+00:00 [COMMAND_EXIT_CODE="0"]
